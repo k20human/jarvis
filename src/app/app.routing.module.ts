@@ -6,6 +6,7 @@ import { navbarMenu } from './core/full-layout/navbar/navbar.menu';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { AccessDeniedComponent } from './shared/components/access-denied/access-denied.component';
+import { AnonymousGuard } from './shared/guards/anonymous.guard';
 
 const appRoutes: Routes = [
     {
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     {
         path: 'login',
         component: SimpleLayoutComponent,
+        canActivate: [AnonymousGuard],
         children: [
             {
                 path: '',

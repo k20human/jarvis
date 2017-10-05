@@ -14,6 +14,7 @@ import { ExceptionService } from './shared/services/exception.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceLocator } from './shared/misc/service-locator';
 import { HttpClientModule } from '@angular/common/http';
+import { AnonymousGuard } from './shared/guards/anonymous.guard';
 
 export function RestHttpFactory(backend: XHRBackend,
                                 options: RequestOptions,
@@ -40,6 +41,7 @@ export function RestHttpFactory(backend: XHRBackend,
     ],
     providers: [
         AuthGuard,
+        AnonymousGuard,
         {
             provide: RestHttpService,
             useFactory: RestHttpFactory,
