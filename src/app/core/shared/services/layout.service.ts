@@ -1,0 +1,116 @@
+import { Injectable } from '@angular/core';
+import { Router, Routes } from '@angular/router';
+
+@Injectable()
+export class LayoutService {
+
+    protected currentMenuItem = {};
+    protected parentItem: string = null;
+
+    constructor(private router: Router) {
+    }
+
+    public convertRoutesToMenus(routes: any[], parent: string = null): any[] {
+        this.parentItem = parent;
+        const items = this.convertArrayToItems(routes);
+        return this.skipEmpty(items);
+    }
+
+    public getCurrentItem(): any {
+        return this.currentMenuItem;
+    }
+
+    public selectMenuItem(menuItems: any[]): any[] {
+        const items = [];
+        menuItems.forEach((item) => {
+            this.selectItem(item);
+
+            if (item.selected) {
+                this.currentMenuItem = item;
+            }
+
+            if (item.children && item.children.length > 0) {
+                item.children = this.selectMenuItem(item.children);
+            }
+            items.push(item);
+        });
+        return items;
+    }
+
+    protected skipEmpty(items: any[]): any[] {
+        const menu = [];
+        items.forEach((item) => {
+            let menuItem;
+            if (item.skip) {
+                if (item.children && item.children.length > 0) {
+                    menuItem = item.children;
+                }
+            } else {
+                menuItem = item;
+            }
+
+            if (menuItem) {
+                menu.push(menuItem);
+            }
+        });
+
+        return [].concat.apply([], menu);
+    }
+
+    protected convertArrayToItems(routes: any[], parent?: any): any[] {
+        const items = [];
+        routes.forEach((route) => {
+            items.push(this.convertObjectToItem(route, parent));
+        });
+        return items;
+    }
+
+    protected convertObjectToItem(object, parent?: any): any {
+        let item: any = {};
+
+        if (object.data && object.data.title) {
+            // This is a menu object
+            item = object.data;
+            item.route = object;
+        } else {
+            item.route = object;
+            item.skip = true;
+        }
+
+        // We have to collect all paths to correctly build the url then
+        if (parent && parent.route && parent.route.paths) {
+            item.route.paths = parent.route.paths.slice(0);
+        } else {
+            if (this.parentItem !== null) {
+                item.route.paths = [this.parentItem];
+            } else {
+                item.route.paths = [];
+            }
+        }
+
+        item.route.paths.push(item.route.path);
+
+        if (object.children && object.children.length > 0) {
+            item.children = this.convertArrayToItems(object.children, item);
+        }
+
+        return this.prepareItem(item);
+    }
+
+    protected prepareItem(object: any): any {
+        if (!object.skip) {
+            const itemUrl = this.router.serializeUrl(this.router.createUrlTree(object.route.paths));
+            object.url = object.url ? object.url : itemUrl;
+            object.title = `titles.${object.title}.title`;
+            object.target = object.target || '';
+            return this.selectItem(object);
+        }
+
+        return object;
+    }
+
+    protected selectItem(object: any): any {
+        object.selected = object.url == (this.router.url);
+        return object;
+    }
+}

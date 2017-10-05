@@ -1,0 +1,14 @@
+<!-- Content -->
+<section id="wrapper" class="wrapper theme--default" [ngClass]="{'sidebar--mini': isMiniDesktop(), 'sidebar--opened': isMiniMobile()}">
+    <!-- Header -->
+    <app-layout-header></app-layout-header>
+
+    <section class="wrapper__content">
+        <!-- Page content -->
+        <div class="wrapper__content__page">
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+</section>
+
+

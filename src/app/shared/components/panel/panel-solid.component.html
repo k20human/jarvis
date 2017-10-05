@@ -1,0 +1,11 @@
+<div class="panel {{ color != null ? 'panel--color' + color : '' }}" [ngClass]="{'panel--link': link}">
+    <div class="panel-body">
+        <i class="fa fa-{{ icon }}" *ngIf="icon"></i>
+        <div class="panel__value">
+            <ng-content select="app-panel-solid-value"></ng-content>
+        </div>
+        <div class="panel__title">
+            <ng-content select="app-panel-solid-title"></ng-content>
+        </div>
+    </div>
+</div>

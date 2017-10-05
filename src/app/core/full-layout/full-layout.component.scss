@@ -1,0 +1,43 @@
+@import "../../../assets/scss/variables-mixins";
+
+.wrapper {
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+
+    &__content {
+        width: 100%;
+        margin-right: 0;
+        padding-top: 60px;
+        background: #F0F3F3;
+        position: relative;
+        margin-bottom: 5px;
+
+        &__page {
+            padding: 15px 25px 0 25px;
+            width: 100%;
+        }
+    }
+}
+
+/*@media (min-width: $screen-sm-min) {
+    .wrapper {
+        &.sidebar--mini .wrapper__content {
+            transition: all 0.1s ease-in-out;
+        }
+
+        &__content {
+            transition: all 0.1s ease-in-out;
+            width: auto;
+        }
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+    .wrapper__content {
+        margin-left: 0;
+
+        &__page {
+            padding: 15px 5px 0 5px;
+        }
+    }
+}*/

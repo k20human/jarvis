@@ -1,0 +1,49 @@
+@import "../../../../assets/scss/variables-mixins";
+
+.panel {
+    position: relative;
+    margin: 10px 0;
+
+    &--link {
+        cursor: pointer;
+    }
+
+    > .panel-body {
+        border: none;
+        background-color: #fff;
+        color: $grey;
+
+        > i {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    }
+
+    @for $i from 1 through length($color-list) {
+        &.panel--color#{$i} > .panel-body {
+            @include color(background-color, $i);
+            color: #fff;
+        }
+
+        &.panel--color#{$i}.panel--link > .panel-body:hover {
+            @include colorLighten(background-color, $i, 20%);
+            color: #fff;
+        }
+    }
+
+    &__title,
+    &__value {
+        display: block;
+        text-align: center
+    }
+
+    &__title {
+        font-size: 1rem;
+    }
+
+    &__value {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+}

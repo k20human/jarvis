@@ -1,0 +1,42 @@
+// Sizes
+$font-weight-default: 300;
+$padding: $font-size-base;
+$spacer-y: 10px;
+
+// Colors
+$main-color: #0181CA;
+$secondary-color: #279CC9;
+
+$nb-color: 5;
+
+$color1: $main-color;
+$color2: #F9B233;
+$color3: #00A099;
+$color4: #E6381C;
+$color5: #5F5E5E;
+
+$color-list: ($color1, $color2, $color3, $color4, $color5);
+
+// Redefining Material Design colors
+$brand-primary: $main-color;
+$blue: $color1;
+$green: $color3;
+$red: $color4;
+$grey: $color5;
+$yellow: $color2;
+
+// Other colors
+$grey-light: lighten($grey, 40%);
+
+// Footer and toogle height
+$footer-height: 40px;
+
+// Header and logo height
+$header-height: 68px;
+
+// Transition duration
+$menu-transition-duration: 0.3s;
+
+// Menu width
+$menu-width: 230px;
+$menu-width-collapsed: 62px;

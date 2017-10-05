@@ -1,0 +1,15 @@
+$fa-font-path: '~font-awesome/fonts';
+
+// Variables and mixins
+@import "variables-mixins";
+
+// Libraries
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+@import "~font-awesome/scss/font-awesome";
+@import "~primeng/resources/themes/bootstrap/theme.css";
+@import "~primeng/resources/primeng.min.css";
+@import "~ng2-slim-loading-bar/style.css";
+
+// Global theme
+@import "shared/layout";
+@import "shared/preloader";
