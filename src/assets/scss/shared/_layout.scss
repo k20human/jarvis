@@ -2,7 +2,6 @@ html {
     font-family: $font-family-base;
     font-weight: $font-weight-default;
     font-size: $font-size-base;
-    color: $main-color;
     height: 100%;
 }
 
@@ -13,19 +12,21 @@ body {
     min-height: 100%;
     position: relative;
 
-    a {
-        //color: $link-color;
-
-        &:hover,
-        &:focus {
-            //color: $link-hover-color;
-        }
-    }
-
     &--fullscreen {
         overflow: hidden;
         position: fixed;
     }
+}
+
+.app {
+    padding: 20px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,7 +34,29 @@ h1, h2, h3, h4, h5, h6 {
     margin: rem(10px) 0;
 }
 
+h1 {
+    font-size: $font-size-h1;
+}
 
+h2 {
+    font-size: $font-size-h2;
+}
+
+h3 {
+    font-size: $font-size-h3;
+}
+
+h4 {
+    font-size: $font-size-h4;
+}
+
+h5 {
+    font-size: $font-size-h5;
+}
+
+h6 {
+    font-size: $font-size-h6;
+}
 
 hr {
     margin-top: rem(10px);
@@ -88,23 +111,6 @@ hr {
       //  background-color: $brand-info;
     }
 }
-
-/*.fab {
-    position: fixed;
-    z-index: 999;
-
-    &--bottom {
-        bottom: rem(10px);
-
-        &--up {
-            bottom: rem(80px);
-        }
-    }
-
-    &--right {
-        right: rem(20px);
-    }
-}*/
 
 /*
  Margin blocks

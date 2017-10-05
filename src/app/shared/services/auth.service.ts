@@ -4,6 +4,7 @@ import { Http, RequestOptions, Headers } from '@angular/http';
 import { environment } from '../../../environments/environment';
 import { User } from '../models/user';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/of';
 import { RestHttpService } from './rest-http.service';
 import { ExceptionService } from './exception.service';
 import { Router } from '@angular/router';

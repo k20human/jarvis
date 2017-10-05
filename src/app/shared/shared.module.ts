@@ -4,7 +4,6 @@ import { GrowlComponent } from './components/growl/growl.component';
 import { GrowlService } from './services/growl.service';
 import { GrowlModule } from 'primeng/components/growl/growl';
 import { WindowService } from './services/window.service';
-import { PanelModule } from './components/panel/panel.module';
 import { BorderedComponent } from './components/bordered/bordered.component';
 import { AuthService } from './services/auth.service';
 import { RestHttpService } from './services/rest-http.service';
@@ -23,15 +22,19 @@ import { ObservableService } from './services/observable.service';
 import { BooleanPipe } from './pipes/boolean.pipe';
 import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MdButtonModule, MdCardModule, MdFormFieldModule, MdInputModule } from '@angular/material';
 
 @NgModule({
     imports: [
         GrowlModule,
-        //PanelModule,
         FormsModule,
         ReactiveFormsModule,
         CommonModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MdButtonModule,
+        MdCardModule,
+        MdFormFieldModule,
+        MdInputModule,
     ],
     declarations: [
         FaderComponent,
@@ -51,8 +54,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         GrowlComponent,
         BorderedComponent,
         SimplePanelComponent,
-        //PanelModule,
-        //FormHeaderComponent,
         KeysPipe,
         FilesizePipe,
         MapValuesPipe,
@@ -61,7 +62,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         ReactiveFormsModule,
         GrowlModule,
         BooleanPipe,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MdButtonModule,
+        MdCardModule,
+        MdFormFieldModule,
+        MdInputModule,
     ]
 })
 export class SharedModule {

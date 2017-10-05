@@ -57,7 +57,7 @@ export class SecureHttpService extends EventHttpService {
 
     private getToken() {
         const credentials = JSON.parse(localStorage.getItem('oauth'));
-        return credentials.access_token;
+        return credentials.token;
     }
 
 }

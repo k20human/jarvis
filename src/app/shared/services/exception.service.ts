@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { GrowlService } from './growl.service';
 import { isDevMode } from '@angular/core';
 import 'rxjs/add/observable/throw';
+import 'rxjs/add/observable/of';
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -70,7 +71,7 @@ export class ExceptionService {
      * @param error
      */
     private error401(error: any): void {
-        this.message = error.error_description;
+        this.message = error.message;
     }
 
     /**

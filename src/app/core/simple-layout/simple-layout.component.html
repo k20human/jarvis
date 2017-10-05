@@ -1,16 +1,9 @@
-<!-- Logo -->
-<header class="navbar">
-	<div class="container">
-		<div class="text-center">
-			<img class="img-responsive" src="/assets/images/logo.png" alt="i360" />
-		</div>
-	</div>
-</header>
+<nav class="navbar__header mat-elevation-z6">
+    <a md-button routerLink="/" aria-label="Jarvis">
+        <span class="navbar__header__title">Jarvis</span>
+    </a>
+</nav>
 
-<!-- Content -->
-<div class="container navless-container">
-	<div class="content">
-		<div class="space"></div>
-		<router-outlet></router-outlet>
-	</div>
+<div class="app">
+    <router-outlet></router-outlet>
 </div>

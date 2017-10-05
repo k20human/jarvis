@@ -7,6 +7,8 @@ import { DropdownModule, TabViewModule, TabMenuModule, GrowlModule, ConfirmDialo
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { AuthService } from '../shared/services/auth.service';
 import { ExceptionService } from '../shared/services/exception.service';
+import { MdButtonModule, MdCardModule, MdFormFieldModule, MdInputModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     imports: [
@@ -20,6 +22,11 @@ import { ExceptionService } from '../shared/services/exception.service';
         LoginRoutingModule,
         GrowlModule,
         ConfirmDialogModule,
+        MdCardModule,
+        FlexLayoutModule,
+        MdFormFieldModule,
+        MdInputModule,
+        MdButtonModule
     ],
     declarations: [
         LoginComponent,

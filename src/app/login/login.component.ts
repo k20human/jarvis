@@ -10,7 +10,7 @@ import { AuthService } from '../shared/services/auth.service';
 export class LoginComponent implements OnInit {
     model: any = {username: '', password : ''};
     loading = false;
-    returnUrl = '/directory';
+    returnUrl = '/';
 
     constructor(
         private router: Router,

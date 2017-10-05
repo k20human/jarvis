@@ -1,3 +1,11 @@
+// Font
+$font-family-base: "Droid Sans", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-sans-serif: $font-family-base;
+
+// Font size
+$font-size-root: 1rem;
+$font-size-base: 16px;
+
 // Sizes
 $font-weight-default: 300;
 $padding: $font-size-base;
@@ -5,7 +13,6 @@ $spacer-y: 10px;
 
 // Colors
 $main-color: #0181CA;
-$secondary-color: #279CC9;
 
 $nb-color: 5;
 
@@ -17,26 +24,10 @@ $color5: #5F5E5E;
 
 $color-list: ($color1, $color2, $color3, $color4, $color5);
 
-// Redefining Material Design colors
-$brand-primary: $main-color;
-$blue: $color1;
-$green: $color3;
-$red: $color4;
-$grey: $color5;
-$yellow: $color2;
-
-// Other colors
-$grey-light: lighten($grey, 40%);
-
-// Footer and toogle height
-$footer-height: 40px;
-
-// Header and logo height
-$header-height: 68px;
-
-// Transition duration
-$menu-transition-duration: 0.3s;
-
-// Menu width
-$menu-width: 230px;
-$menu-width-collapsed: 62px;
+// Titles
+$font-size-h1: rem(floor(($font-size-base * 2.6)));
+$font-size-h2: rem(floor(($font-size-base * 2.15)));
+$font-size-h3: rem(ceil(($font-size-base * 1.7)));
+$font-size-h4: rem(ceil(($font-size-base * 1.25)));
+$font-size-h5: rem($font-size-base);
+$font-size-h6: rem(ceil(($font-size-base * 0.85)));

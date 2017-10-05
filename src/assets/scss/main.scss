@@ -4,7 +4,6 @@ $fa-font-path: '~font-awesome/fonts';
 @import "variables-mixins";
 
 // Libraries
-@import '~@angular/material/prebuilt-themes/purple-green.css';
 @import "~font-awesome/scss/font-awesome";
 @import "~primeng/resources/themes/bootstrap/theme.css";
 @import "~primeng/resources/primeng.min.css";
@@ -13,3 +12,12 @@ $fa-font-path: '~font-awesome/fonts';
 // Global theme
 @import "shared/layout";
 @import "shared/preloader";
+@import "shared/navbar";
+
+// Theme
+@import "shared/colors";
+@include mat-core();
+@include angular-material-theme($app-theme);
+
+// Component theme
+@include navbar-theme();

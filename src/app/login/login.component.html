@@ -1,36 +1,25 @@
-<div class="row">
-    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 brand-holder pull-left">
+<div class="container" fxLayout="row" fxLayoutAlign="start none" fxLayout.xs="column" fxLayout.sm="column">
+    <md-card fxFlex="60" class="welcome">
         <h1>
-            {{ 'login.welcome' | translate }} <i class="fa fa-smile-o" aria-hidden="true"></i>
+            Bienvenue <i class="fa fa-smile-o" aria-hidden="true"></i>
         </h1>
         <p>
-            {{ 'login.explain' | translate }}
+            Merci de vous identifier pour accéder à Jarvis
         </p>
-    </div>
-    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 pull-right">
-        <div>
-            <div class="panel panel-primary">
-                <div class="panel-body">
-                    <form  name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-                        <div class="form-group label-floating">
-                            <label class="control-label" for="username">{{ 'login.username' | translate }}</label>
-                            <input type="text" id="username" name="username" pInputText [(ngModel)]="model.username" #username="ngModel"  required [disabled]="loading" class="form-control" autofocus="autofocus" autocapitalize="off" autocorrect="off"/>
-                        </div>
+    </md-card>
+    <md-card fxFlex>
+        <form  name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+            <md-form-field class="example-full-width">
+                <input mdInput placeholder="Nom d'utilisateur" required [disabled]="loading" name="username" #username="ngModel" [(ngModel)]="model.username" autofocus="autofocus" autocapitalize="off" autocorrect="off" type="text">
+            </md-form-field>
 
-                        <div class="form-group label-floating">
-                            <label class="control-label" for="password">{{ 'login.password' | translate }}</label>
-                            <input type="password" id="password" class="form-control"  [(ngModel)]="model.password"
-                                   #password="ngModel" name="password" required [disabled]="loading"/>
-                        </div>
+            <md-form-field class="example-full-width">
+                <input mdInput placeholder="Mot de passe" required [disabled]="loading" name="password" #password="ngModel" [(ngModel)]="model.password" type="password">
+            </md-form-field>
 
-                        <div>
-                            <button type="submit" name="commit" class="btn btn-primary btn-raised">
-                                {{ 'login.connect' | translate }}
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+            <button md-raised-button color="primary" type="submit">
+                Se connecter
+            </button>
+        </form>
+    </md-card>
 </div>

@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+@import 'colors';
+
+.navbar {
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 10px 16px;
+        color: #fff;
+
+        > .md-button {
+            &:last-child {
+                margin-left: auto;
+            }
+        }
+
+        &__title {
+            text-transform: uppercase;
+        }
+    }
+}
+
+@mixin navbar-theme() {
+    .navbar__header {
+        background: mat-color($app-primary);
+    }
+}
